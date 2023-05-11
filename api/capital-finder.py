@@ -23,8 +23,10 @@ class handler(BaseHTTPRequestHandler):
             capital_data = capital_req.json()
             country_name = capital_data[0]["name"]["common"]
 
-        if capital_city:
+        if capital_city and not country_name:
             message = f"The capital of {dic['name']} is {capital_city}."
+        elif country_name and not capital_city:
+            message = f"{dic['capital']} is the capital of {country_name}."
 
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
