@@ -25,7 +25,7 @@ class handler(BaseHTTPRequestHandler):
 
         if capital_city and country_name == "":
             message = f"The capital of {dic['name']} is {capital_city}."
-        elif country_name and capital_city == "":
+        elif country_name:
             message = f"{dic['capital']} is the capital of {country_name}."
         else:
             message = "There's a problem with your search."
