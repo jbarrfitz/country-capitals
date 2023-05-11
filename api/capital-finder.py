@@ -27,6 +27,8 @@ class handler(BaseHTTPRequestHandler):
             message = f"The capital of {dic['name']} is {capital_city}."
         elif country_name and not capital_city:
             message = f"{dic['capital']} is the capital of {country_name}."
+        else
+            message = "There's a problem with your search."
 
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
