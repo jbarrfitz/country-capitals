@@ -23,7 +23,7 @@ class handler(BaseHTTPRequestHandler):
             capital_data = capital_req.json()
             country_name = capital_data[0]["name"]["common"][0]
 
-        if capital_city:
+        if capital_city and country_name == "":
             message = f"The capital of {dic['name']} is {capital_city}."
         elif country_name and not capital_city:
             message = f"{dic['capital']} is the capital of {country_name}."
