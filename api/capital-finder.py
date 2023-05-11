@@ -21,7 +21,7 @@ class handler(BaseHTTPRequestHandler):
             url = "https://restcounrtires.com/v3.1/capital/"
             capital_req = requests.get(url + dic["capital"])
             capital_data = capital_req.json()
-            country_name = capital_data[0]["name"]["common"][0]
+            country_name = capital_data[0]["name"]["common"]
 
         if capital_city:
             message = f"The capital of {dic['name']} is {capital_city}."
